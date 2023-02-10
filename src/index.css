@@ -1,0 +1,79 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/*=============== GOOGLE FONTS ===============*/
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+
+/*=============== VARIABLES CSS ===============*/
+:root {
+  --header-height: 3.5rem;
+
+  /*========== Colors ==========*/
+  --primary-color: #fc4747;
+  --container-color: #161d2f;
+  /* Dark Blue */
+  --body-bg-color: #10141e;
+  --white-color: #fff;
+  --border-color: #5a698f;
+  --text-color: #fff;
+  --text-color-light: rgba(255, 255, 255, 0.5);
+
+  /*========== Font and typography ==========*/
+  /*.5rem = 8px | 1rem = 16px ...*/
+  --body-font: "Poppins", sans-serif;
+}
+
+@layer base {
+  html {
+    @apply scroll-smooth;
+  }
+  *,
+  ::after,
+  ::before {
+    @apply box-border;
+    @apply p-0;
+    @apply m-0;
+  }
+
+  body,
+  button,
+  input,
+  textarea {
+    @apply font-[var(--body-font)];
+  }
+  #root {
+    @apply p-0;
+  }
+
+  body {
+    @apply bg-[var(--body-bg-color)];
+    @apply text-[var(--text-color)];
+    @apply transition-all;
+    @apply duration-500;
+    @apply relative;
+    @apply leading-[19px];
+    /* overflow-x: hidden; */
+  }
+
+  /* h1,
+  h2,
+  h3 {
+    color: var(--title-color);
+    font-weight: var(--font-semibold);
+  } */
+
+  ul {
+    @apply list-none;
+  }
+
+  a {
+    @apply no-underline;
+  }
+
+  button {
+    @apply cursor-pointer;
+    @apply border-none;
+    @apply outline-none;
+  }
+}

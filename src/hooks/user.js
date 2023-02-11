@@ -2,6 +2,8 @@ import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import { toast } from "react-toastify";
 import http from "../services/httpService";
 
+// https://entertainment-web-app-backend.vercel.app
+
 export const useGetBookmarks = (accessToken) => {
   // const token = useSelector((state) => state.loggedUser.user);
   return useQuery({
@@ -9,7 +11,7 @@ export const useGetBookmarks = (accessToken) => {
     queryFn: async () => {
       return await http
         .get(
-          "https://entertainment-web-app-backend.vercel.app/api/users/bookmarks",
+          "/api/users/bookmarks",
           {
             headers: { "x-auth-token": accessToken },
           }
@@ -24,7 +26,7 @@ export const useBookmarksMutation = (accessToken) => {
     mutationFn: async (entertaimentId) => {
       return await http
         .post(
-          "https://entertainment-web-app-backend.vercel.app/api/users/bookmark",
+          "/api/users/bookmark",
           entertaimentId,
           {
             headers: { "x-auth-token": accessToken },
@@ -48,7 +50,7 @@ export const useLogin = () => {
     mutationFn: async (user) => {
       return await http
         .post(
-          "https://entertainment-web-app-backend.vercel.app/api/auth/signin",
+          "/api/auth/signin",
           user
         )
         .then((res) => res.data);
@@ -64,7 +66,7 @@ export const useSignUp = () => {
     mutationFn: async (user) => {
       return await http
         .post(
-          "https://entertainment-web-app-backend.vercel.app/api/users/signup",
+          "/api/users/signup",
           user
         )
         .then((res) => res.data);

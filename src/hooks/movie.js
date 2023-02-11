@@ -6,7 +6,7 @@ export const useGetMovies = (accessToken) => {
     queryKey: ["movies", accessToken],
     queryFn: async () => {
       return await http
-        .get("https://entertainment-web-app-backend.vercel.app/api/movies/movies", {
+        .get("/api/movies/movies", {
           headers: { "x-auth-token": accessToken },
         })
         .then((res) => res.data);
@@ -14,12 +14,11 @@ export const useGetMovies = (accessToken) => {
   });
 };
 export const useGetTvSeries = (accessToken) => {
-  
   return useQuery({
     queryKey: ["tvSeries", accessToken],
     queryFn: async () => {
       return await http
-        .get("https://entertainment-web-app-backend.vercel.app/api/movies/tv-series", {
+        .get("/api/movies/tv-series", {
           headers: { "x-auth-token": accessToken },
         })
         .then((res) => res.data);
@@ -32,7 +31,7 @@ export const useGetAllMovies = (accessToken) => {
     queryKey: ["allMovies", accessToken],
     queryFn: async () => {
       return await http
-        .get("https://entertainment-web-app-backend.vercel.app/api/movies/all", {
+        .get("/api/movies/all", {
           headers: { "x-auth-token": accessToken },
         })
         .then((res) => res.data);

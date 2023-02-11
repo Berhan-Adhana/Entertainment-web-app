@@ -1,5 +1,8 @@
 import axios from "axios";
 import { toast } from "react-toastify";
+// axios.create({
+//   baseURL: "https://entertainment-web-app-backend.vercel.app",
+// });
 
 axios.interceptors.response.use(null, (error) => {
   const expectedError =

@@ -8,9 +8,12 @@ export const useGetBookmarks = (accessToken) => {
     queryKey: ["bookmarks", accessToken],
     queryFn: async () => {
       return await http
-        .get("http://127.0.0.1:8080/api/users/bookmarks", {
-          headers: { "x-auth-token": accessToken },
-        })
+        .get(
+          "https://entertainment-web-app-backend.vercel.app/api/users/bookmarks",
+          {
+            headers: { "x-auth-token": accessToken },
+          }
+        )
         .then((res) => res.data);
     },
   });
@@ -20,9 +23,13 @@ export const useBookmarksMutation = (accessToken) => {
   return useMutation({
     mutationFn: async (entertaimentId) => {
       return await http
-        .post("http://127.0.0.1:8080/api/users/bookmark", entertaimentId, {
-          headers: { "x-auth-token": accessToken },
-        })
+        .post(
+          "https://entertainment-web-app-backend.vercel.app/api/users/bookmark",
+          entertaimentId,
+          {
+            headers: { "x-auth-token": accessToken },
+          }
+        )
         .then((res) => {
           toast.success(res.data.message);
         });
@@ -40,7 +47,10 @@ export const useLogin = () => {
   return useMutation({
     mutationFn: async (user) => {
       return await http
-        .post("http://127.0.0.1:8080/api/auth/signin", user)
+        .post(
+          "https://entertainment-web-app-backend.vercel.app/api/auth/signin",
+          user
+        )
         .then((res) => res.data);
     },
     onSuccess: () => {
@@ -53,7 +63,10 @@ export const useSignUp = () => {
   return useMutation({
     mutationFn: async (user) => {
       return await http
-        .post("http://127.0.0.1:8080/api/users/signup", user)
+        .post(
+          "https://entertainment-web-app-backend.vercel.app/api/users/signup",
+          user
+        )
         .then((res) => res.data);
     },
     onSuccess: () => {

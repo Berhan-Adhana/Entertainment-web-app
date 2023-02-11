@@ -1,4 +1,3 @@
-import { computeHeadingLevel } from "@testing-library/react";
 import React from "react";
 import { AiOutlineSearch } from "react-icons/ai";
 import { useDispatch, useSelector } from "react-redux";
@@ -19,17 +18,19 @@ const Search = () => {
   // for changing the placeholder as pages changes
   const location = useLocation();
 
-   const loadSearchResult = (data?, searchString) => {
-     if (searchString === "") dispatch(loadSearchResults(null));
-     else
-       dispatch(
-         loadSearchResults(
-           data?.filter((genere) =>
-             genere.title.toLowerCase().includes(searchString)
-           )
-         )
-       );
-   };
+  const loadSearchResult = (data?, searchString) => {
+    if (searchString === "") dispatch(loadSearchResults(null));
+    else
+      dispatch(
+        loadSearchResults(
+          data?.filter((genere) =>
+            genere.title
+              .toLowerCase()
+              .includes(searchString.trim().toLowerCase())
+          )
+        )
+      );
+  };
 
   const searchHandler = (searchStr) => {
     switch (location.pathname) {
@@ -47,7 +48,7 @@ const Search = () => {
 
       case "/bookmarks":
         loadSearchResult(bookMarks, searchStr);
-       
+
         break;
 
       default:

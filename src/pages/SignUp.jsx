@@ -52,7 +52,7 @@ const SignUp = () => {
           handleChange,
           isSubmitting,
         }) => (
-          <Form className="max-w-[400px] bg-[var(--container-color)] p-6 rounded-3xl  absolute left-[50%] top-[50%] translate-x-[-50%] translate-y-[-50%] block">
+          <Form className="bg-[var(--container-color)] p-6 rounded-3xl  absolute left-[50%] top-[50%] translate-x-[-50%] translate-y-[-50%]  w-[90%]  shadow  large:max-w-md block mr-5 mx-auto min-w-[285px]">
             <img src={Logo} alt="" className="mx-auto mb-4" />
             <h1 className="text-left">SignUp</h1>
             <div className="form-group">
@@ -62,7 +62,7 @@ const SignUp = () => {
                 placeholder="Enter your name"
                 onChange={handleChange}
                 className={
-                  "form-control p-4  border-b-2 mb-2 bg-transparent border-[ #5A698F]" +
+                  "form-control p-4 w-full border-b-2 mb-2 bg-transparent border-b-[var(--border-color)]" +
                   (errors.userName && touched.userName
                     ? "border-2 border-rose-500 rounded-sm"
                     : "")
@@ -82,7 +82,7 @@ const SignUp = () => {
                 onChange={handleChange}
                 placeholder="Enter your email"
                 className={
-                  "form-control p-4  border-b-2 mb-2 bg-transparent border-[ #5A698F]" +
+                  "form-control w-full p-4  border-b-2 mb-2 bg-transparent border-b-[var(--border-color)]" +
                   (errors.email && touched.email
                     ? "border-2 border-rose-500 rounded-sm"
                     : "")
@@ -102,7 +102,7 @@ const SignUp = () => {
                 onChange={handleChange}
                 placeholder="Enter your password"
                 className={
-                  "form-control p-4  border-b-2 mb-2 bg-transparent border-[ #5A698F]" +
+                  "form-control w-full p-4  border-b-2 mb-2 bg-transparent border-b-[var(--border-color)]" +
                   (errors.password && touched.password
                     ? "border-2 border-rose-500 rounded-sm"
                     : "")
@@ -122,7 +122,7 @@ const SignUp = () => {
                 onChange={handleChange}
                 placeholder="confirm your password"
                 className={
-                  "form-control p-4  border-b-2 mb-2 bg-transparent border-[ #5A698F]" +
+                  "form-control w-full p-4  border-b-2 mb-2 bg-transparent border-b-[var(--border-color)]" +
                   (errors.confirmPassword && touched.confirmPassword
                     ? " is-invalid border-2 border-rose-500 rounded-sm"
                     : "")
@@ -138,7 +138,7 @@ const SignUp = () => {
             <div className="form-group">
               <button
                 type="submit"
-                className="font-semibold bg-[var(--primary-color)] w-full p-2 rounded-md mt-3"
+                className="font-semibold text-white bg-[var(--primary-color)] w-full p-2 rounded-md mt-3 hover:bg-white hover:text-black"
                 disabled={
                   isSubmitting ||
                   errors.userName ||
@@ -162,7 +162,7 @@ const SignUp = () => {
                 Already have an account?{" "}
                 <NavLink
                   to="/auth/login"
-                  className="text-[var(--primary-color)] font-semibold"
+                  className="text-[var(--primary-color)] font-semibold "
                 >
                   Sign In
                 </NavLink>

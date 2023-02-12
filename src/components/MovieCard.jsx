@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import IconPlay from "../assets/icon-play.svg";
 import TvIcon from "../assets/icon-nav-tv-series.svg";
 import { BsBookmark, BsFillBookmarkFill, BsFilm } from "react-icons/bs";
@@ -13,7 +13,7 @@ const MovieCard = ({ movie, onClick }) => {
 
   data?.map((m, index) => {
     if (m._id === movie._id) {
-      isBookmarked = true;
+      return isBookmarked=true;
     }
   });
 
@@ -22,26 +22,25 @@ const MovieCard = ({ movie, onClick }) => {
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true }}
-      className="max-w-sm group rounded-lg text-green-50  relative  overflow-hidden transition-all duration-500"
+      className="w-[90%] large:max-w-sm mx-auto  group rounded-lg text-green-50  relative  overflow-hidden transition-all duration-500"
     >
       {/* <div className="max-w-[200px] medium:max-w-[150px] large:max-w-[200px] tablet:max-w-[270px] desktop:w-[300px]"> */}
-      
-        <picture className="group-hover:scale-100 ">
-          <source
-            media="(min-width:992px)"
-            src={require(`../${movie.thumbnail.regular.large}`)}
-            
-          />
-          <source
-            media="(min-width:425px)"
-            src={require(`../${movie.thumbnail.regular.medium}`)}
-          />
-          <img
-            src={require(`../${movie.thumbnail.regular.small}`)}
-            alt="thumbnails"
-          />
-        </picture>
-    
+
+      <picture className="group-hover:scale-100 ">
+        <source
+          media="(min-width:992px)"
+          src={require(`../${movie.thumbnail.regular.large}`)}
+        />
+        <source
+          media="(min-width:425px)"
+          src={require(`../${movie.thumbnail.regular.medium}`)}
+        />
+        <img
+          src={require(`../${movie.thumbnail.regular.small}`)}
+          alt="thumbnails"
+        />
+      </picture>
+
       <div className="opacity-0 absolute top-[40%] left-[50%] translate-x-[-50%] translate-y-[-50%] group-hover:opacity-100 transition ease-in-out duration-300">
         <img
           src={IconPlay}

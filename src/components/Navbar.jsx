@@ -19,7 +19,7 @@ const Navbar = () => {
       <div className="h-screen w-[56px] bg-[var(--container-color)]   flex-col justify-between items-center hidden  laptop:flex ">
         <NavLink
           to="/"
-          className={({ isActive }) => (isActive ? "text-red-500" : "mb-3")}
+          className={({ isActive }) => (isActive ? "text-white" : "mb-3")}
         >
           <img src={Logo} alt="" className="self-start mx-auto mt-4" />
         </NavLink>
@@ -27,20 +27,17 @@ const Navbar = () => {
           <NavLink
             to="/"
             className={({ isActive }) =>
-              isActive ? "text-red-500 mb-3" : "mb-3"
+              isActive ? "text-white mb-3" : "mb-3 text-[var(--border-color)]"
             }
           >
-            <BiCategory
-              size={25}
-              className={({ isActive }) => {
-                return isActive ? "text-red-500 mb-3" : "mb-3";
-              }}
-            />
+            <BiCategory size={25} />
           </NavLink>
           <NavLink
             to="/movies"
             className={({ isActive }) => {
-              return isActive ? "text-red-500 mb-3" : "mb-3";
+              return isActive
+                ? "text-white mb-3"
+                : "mb-3 text-[var(--border-color)]";
             }}
           >
             <BiMoviePlay size={25} className="mb-3" />
@@ -48,7 +45,9 @@ const Navbar = () => {
           <NavLink
             to="/tv-series"
             className={({ isActive }) => {
-              return isActive ? "text-red-500 mb-3" : "mb-3";
+              return isActive
+                ? "text-white mb-3"
+                : "mb-3 text-[var(--border-color)]";
             }}
           >
             <FiMonitor size={25} className="mb-3" />
@@ -56,7 +55,9 @@ const Navbar = () => {
           <NavLink
             to="/bookmarks"
             className={({ isActive }) => {
-              return isActive ? "text-red-500 mb-3" : "mb-3";
+              return isActive
+                ? "text-white mb-3"
+                : "mb-3 text-[var(--border-color)]";
             }}
           >
             <BsBookmarkFill size={25} className="mb-5" />
@@ -69,7 +70,7 @@ const Navbar = () => {
         <NavLink
           to="/"
           className={({ isActive }) => {
-            return isActive ? "text-red-500 mb-3" : "mb-3";
+            return isActive ? "text-white mb-3" : "mb-3";
           }}
         >
           <img src={Logo} alt="" className=" mx-auto mt-4" />
@@ -78,7 +79,9 @@ const Navbar = () => {
           <NavLink
             to="/"
             className={({ isActive }) => {
-              return isActive ? "text-red-500 mr-5" : "mr-5";
+              return isActive
+                ? "text-white mr-5"
+                : "mr-5 text-[var(--border-color)]";
             }}
           >
             <BiCategory size={25} />
@@ -86,7 +89,9 @@ const Navbar = () => {
           <NavLink
             to="/movies"
             className={({ isActive }) => {
-              return isActive ? "text-red-500 mr-5" : "mr-5";
+              return isActive
+                ? "text-white mr-5"
+                : "mr-5 text-[var(--border-color)]";
             }}
           >
             <BiMoviePlay size={25} />
@@ -94,7 +99,9 @@ const Navbar = () => {
           <NavLink
             to="/tv-series"
             className={({ isActive }) => {
-              return isActive ? "text-red-500 mr-5" : "mr-5";
+              return isActive
+                ? "text-white mr-5"
+                : "mr-5 text-[var(--border-color)]";
             }}
           >
             <FiMonitor size={25} />
@@ -102,7 +109,9 @@ const Navbar = () => {
           <NavLink
             to="/bookmarks"
             className={({ isActive }) => {
-              return isActive ? "text-red-500 mr-5" : "mr-5";
+              return isActive
+                ? "text-white mr-5"
+                : "mr-5 text-[var(--border-color)]";
             }}
           >
             <BsBookmarkFill size={25} />

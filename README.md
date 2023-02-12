@@ -52,21 +52,20 @@ Then crop/optimize/edit your image however you like, add it to your project, and
 
 - Solution URL: (https://github.com/Berhan-Adhana/Entertainment-web-app)
 - Live Site URL: (https://entertainment-web-app-ruby.vercel.app/)
+- Backend Solution URL: (https://github.com/Berhan-Adhana/Entertainment-web-app-backend)
 
 ## My process
 
 ### Built with
 
 - Semantic HTML5 markup
-- CSS custom properties
-- Flexbox
-- CSS Grid
+- Tailwindcss
 - Mobile-first workflow
 - [React](https://reactjs.org/) - JS library
-- [Next.js](https://nextjs.org/) - React framework
-- [Styled Components](https://styled-components.com/) - For styles
+- [Nodejs](https://expressjs.com/) - express js Node framework
+- [MongoDb](https://www.mongodb.com/) - For database
 
-**Note: These are just examples. Delete this note and replace the list above with your own choices**
+
 
 ### What I learned
 

@@ -51,7 +51,7 @@ Then crop/optimize/edit your image however you like, add it to your project, and
 ### Links
 
 - Solution URL: (https://github.com/Berhan-Adhana/Entertainment-web-app)
-- Live Site URL: (entertainment-web-app-ruby.vercel.app)
+- Live Site URL: (https://entertainment-web-app-ruby.vercel.app/)
 
 ## My process
 

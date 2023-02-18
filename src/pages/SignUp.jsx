@@ -105,6 +105,7 @@ const SignUp = () => {
 
                 const user = {
                   userName: values.userName,
+                  email: values.email,
                   password: values.password,
                 };
                 await signUp.mutate(user);

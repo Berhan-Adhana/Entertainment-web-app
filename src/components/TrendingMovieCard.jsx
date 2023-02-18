@@ -1,6 +1,6 @@
-import React from 'react'
+import React from "react";
 import IconPlay from "../assets/icon-play.svg";
-import { BsBookmark, BsFillBookmarkFill, BsFilm } from "react-icons/bs";
+import { BsFilm } from "react-icons/bs";
 import { useGetBookmarks } from "../hooks/user";
 import { useSelector } from "react-redux";
 
@@ -45,25 +45,25 @@ const TrendingMovieCard = ({ movie, onClick }) => {
       <div className="flex flex-col absolute bottom-2 left-3">
         <div className="flex gap-x-2 md:gap-x-4 opacity-75 mix-blend-normal ">
           <p className="flex items-center relative ml-2">
-            <span className="absolute left-[-9px] top-[-4px] text-[18px] font-bold">
+            <span className="absolute left-[-9px] top-[-4px]  font-bold">
               .
             </span>
             {movie.year}
           </p>
           <span className="flex items-center relative ml-2">
-            <span className="absolute left-[-9px] top-[-4px] text-[18px] font-bold">
+            <span className="absolute left-[-9px] top-[-4px]  font-bold">
               .
             </span>
             <BsFilm />
           </span>
           <p className="flex items-center relative ml-2">
-            <span className="absolute left-[-9px] top-[-4px] text-[18px] font-bold">
+            <span className="absolute left-[-9px] top-[-4px]  font-bold">
               .
             </span>
             {movie.category}
           </p>
           <p className="flex items-center relative ml-2">
-            <span className="absolute left-[-9px] top-[-4px] text-[18px] font-bold">
+            <span className="absolute left-[-9px] top-[-4px]  font-bold">
               .
             </span>
             {movie.rating}
@@ -109,4 +109,4 @@ const TrendingMovieCard = ({ movie, onClick }) => {
   );
 };
 
-export default TrendingMovieCard
+export default TrendingMovieCard;

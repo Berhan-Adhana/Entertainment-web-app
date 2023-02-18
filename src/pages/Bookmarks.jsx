@@ -29,7 +29,7 @@ const Bookmarks = () => {
 
   return (
     <section className="grid  mx-auto ml-2 mr-2">
-      <h1 className="mt-5 text-2xl font-semibold mb-2 ">
+      <h1 className="mt-5 font-semibold mb-2 ">
         {bookmarksSearchResults?.length !== 0 ? (
           "Bookmarked Movies"
         ) : (

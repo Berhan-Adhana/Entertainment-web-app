@@ -19,7 +19,7 @@ const Movies = () => {
 
   return (
     <section className="grid   mx-auto ml-2 mr-2 ">
-      <h1 className="mt-5 text-2xl font-semibold mb-2 ">
+      <h1 className="mt-5 font-semibold mb-2 ">
         {searchResults?.length !== 0 ? "Movies" : ""}
       </h1>
       <div className="grid gap-y-2 small:grid-cols-1 medium:grid-cols-2 medium:gap-4 large:gap-5 tablet:grid-cols-3 tablet:gap-4 laptop:grid-cols-4 laptop:gap-8 desktop:gap-8">

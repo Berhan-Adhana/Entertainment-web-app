@@ -1,9 +1,7 @@
 import React from "react";
 import IconPlay from "../assets/icon-play.svg";
-import Bookmarked from "../assets/icon-bookmark-full.svg";
-import NotBookmarked from "../assets/icon-bookmark-empty.svg";
 import TvIcon from "../assets/icon-nav-tv-series.svg";
-import { BsBookmark, BsFillBookmarkFill, BsFilm } from "react-icons/bs";
+import { BsFilm } from "react-icons/bs";
 import { useGetBookmarks } from "../hooks/user";
 import { useSelector } from "react-redux";
 
@@ -47,17 +45,16 @@ const MovieCard = ({ movie, onClick }) => {
         <div className="flex gap-x-7 items-center justify-start px-1 !opacity-100 transition ease-in-out duration-300 py-1">
           <img
             src={IconPlay}
-            alt=""
-            // group-hover:bg-[rgba(197, 193, 193, 0.5)]
+            alt="play icon"
             className=" cursor-pointer   !opacity-100 "
           />
           <span className="text-white  !opacity-100 ">Play</span>
         </div>
       </div>
-      <div className="flex flex-col small:text-xs large:text-sm laptop:text-lg ">
+      <div className="flex flex-col  ">
         <div className="flex gap-x-2 md:gap-x-4 opacity-75 mix-blend-normal">
           <p className="flex items-center relative ml-2">
-            <span className="absolute left-[-9px] top-[-4px] text-[18px] font-bold">
+            <span className="absolute left-[-9px] top-[-4px]  font-bold">
               .
             </span>
             {movie.year}
@@ -74,19 +71,19 @@ const MovieCard = ({ movie, onClick }) => {
             )}
           </span>
           <p className="flex items-center relative ml-2">
-            <span className="absolute left-[-9px] top-[-4px] text-[18px] font-bold">
+            <span className="absolute left-[-9px] top-[-4px]  font-bold">
               .
             </span>
             {movie.category}
           </p>
           <p className="flex items-center relative ml-2">
-            <span className="absolute left-[-9px] top-[-4px] text-[18px] font-bold">
+            <span className="absolute left-[-9px] top-[-4px]  font-bold">
               .
             </span>
             {movie.rating}
           </p>
         </div>
-        <div className="font-bold">{movie.title}</div>
+        <h2 className="font-bold mt-1">{movie.title}</h2>
       </div>
       <button
         className="group/bookmark absolute top-2 right-2 z-10  cursor-pointer w-[2rem] rounded-[50%]  bg-[#10141e] mix-blend-normal opacity-50  h-[2rem]  justify-center items-center hover:bg-white flex"

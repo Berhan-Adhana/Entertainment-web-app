@@ -39,7 +39,8 @@
   button,
   input,
   textarea {
-    @apply font-[var(--body-font)];
+    /* @apply font-[var(--body-font)]; */
+    font-family: "Outfit", sans-serif;
   }
   #root {
     @apply p-0;
@@ -52,7 +53,21 @@
     @apply duration-500;
     @apply relative;
     @apply leading-[19px];
+    @apply small:text-[13px];
+    @apply tablet:text-[15px];
+
     /* overflow-x: hidden; */
+  }
+
+  h1 {
+    @apply small:text-[18px];
+    @apply tablet:text-[24px];
+    @apply laptop:text-[32px];
+  }
+  h2 {
+    @apply small:text-[16px];
+    @apply laptop:text-[22px];
+    @apply desktop:text-[30px];
   }
 
   /* h1,

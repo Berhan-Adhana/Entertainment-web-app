@@ -1,12 +1,14 @@
-import { ErrorMessage, Field, Form, Formik } from "formik";
+import { Form, Formik } from "formik";
 import React, { useEffect } from "react";
 import { useDispatch } from "react-redux";
-import { Link, NavLink, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import * as Yup from "yup";
-import Loading from "../components/Loading";
 import { updateUser } from "../context/userSlice";
 import { useLogin } from "../hooks/user";
 import Logo from "../assets/logo.svg";
+import Button from "../components/Button";
+import Account from "../components/Account";
+import Input from "../components/Input";
 
 const Login = () => {
   const dispatch = useDispatch();
@@ -54,103 +56,53 @@ const Login = () => {
         validationSchema={validationSchema}
         // onSubmit={handleSubmit}
       >
-        {({ errors, touched, resetForm, values, isSubmitting }) => (
+        {({
+          errors,
+          touched,
+          resetForm,
+          values,
+          isSubmitting,
+          handleChange,
+        }) => (
           <Form className="bg-[var(--container-color)] p-6 rounded-3xl  absolute left-[50%] top-[50%] translate-x-[-50%] translate-y-[-50%]  w-[90%]  shadow  large:max-w-md block mr-5 mx-auto min-w-[285px]">
             <img src={Logo} alt="" className="mx-auto mb-4" />
             <h1 className="text-left">Login</h1>
+            <Input
+              isError={errors.userName && touched.userName}
+              name="userName"
+              type="text"
+              placeholder="Enter your User Name"
+              onChange={handleChange}
+              error={errors.userName}
+            />
+            <Input
+              isError={errors.password && touched.password}
+              name="password"
+              type="password"
+              placeholder="Enter your password"
+              onChange={handleChange}
+              error={errors.password}
+            />
 
-            <div className="form-group">
-              <Field
-                name="userName"
-                type="text"
-                placeholder="Enter your User Name"
-                className={
-                  "w-full p-4  border-b-2 mb-2 bg-transparent border-b-[var(--border-color)]" +
-                  (errors.userName && touched.userName
-                    ? "border-2 border-rose-500"
-                    : "")
-                }
-              />
-              <ErrorMessage
-                name="userName"
-                component="div"
-                className="invalid-feedback text-rose-500 mb-1"
-              />
-            </div>
+            <Button
+              isDisabled={isSubmitting || errors.userName || errors.password}
+              text="Login"
+              isLoading={signIn.isLoading}
+              onClick={async (e) => {
+                e.preventDefault();
 
-            <div className="form-group">
-              <Field
-                name="password"
-                type="password"
-                placeholder="Enter your password"
-                className={
-                  "w-full p-4  border-b-2 mb-2 bg-transparent border-b-[var(--border-color)]" +
-                  (errors.password && touched.password
-                    ? "border-2 border-rose-500"
-                    : "")
-                }
-              />
-              <ErrorMessage
-                name="password"
-                component="div"
-                className="text-rose-500 mb-1"
-              />
-            </div>
-            <div className="flex items-center justify-between">
-              <div className="flex items-start">
-                <div className="flex items-center h-5">
-                  <input
-                    id="remember"
-                    aria-describedby="remember"
-                    type="checkbox"
-                    className="w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-primary-300 dark:bg-gray-700 dark:border-gray-600 dark:focus:ring-primary-600 dark:ring-offset-gray-800"
-                    required=""
-                  />
-                </div>
-                <div class="ml-3 text-sm">
-                  <label
-                    for="remember"
-                    className="text-gray-500 dark:text-gray-300"
-                  >
-                    Remember me
-                  </label>
-                </div>
-              </div>
-              <Link
-                to={""}
-                className="text-sm font-medium text-primary-600 hover:underline dark:text-primary-500"
-              >
-                Forgot password?
-              </Link>
-            </div>
-
-            <div className="form-group">
-              <button
-                type="submit"
-                className="font-semibold text-white bg-[var(--primary-color)]  w-full p-2 rounded-md mt-3 hover:bg-white hover:text-black"
-                disabled={isSubmitting || errors.password || errors.userName}
-                onClick={async (e) => {
-                  e.preventDefault();
-
-                  const user = {
-                    userName: values.userName,
-                    password: values.password,
-                  };
-                  await signIn.mutate(user);
-                }}
-              >
-                {signIn.isLoading ? <Loading /> : "Login"}
-              </button>
-              <p className="mt-3">
-                Don't have an account?{" "}
-                <NavLink
-                  to="/user/signup"
-                  className="text-[var(--primary-color)] font-semibold "
-                >
-                  Sign Up
-                </NavLink>
-              </p>
-            </div>
+                const user = {
+                  userName: values.userName,
+                  password: values.password,
+                };
+                await signIn.mutate(user);
+              }}
+            ></Button>
+            <Account
+              to="/user/signup"
+              text1=" Don't have an account? "
+              text2="Sign Up"
+            />
           </Form>
         )}
       </Formik>

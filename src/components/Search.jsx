@@ -61,8 +61,7 @@ const Search = () => {
       <input
         type="text"
         placeholder={SearchPlaceholder()}
-        // placeholder="Search a movie"
-        className="search__input  p-5 rounded-md  w-full bg-transparent border-0 outline-none focus:border-b-2 border-[var(--border-color)]"
+        className="search__input  p-5 rounded-md  w-full bg-transparent border-0 outline-none focus:border-b-2 border-[var(--border-color)] caret-[var(--primary-color)]"
         onChange={(e) => {
           searchHandler(e.target.value);
         }}
